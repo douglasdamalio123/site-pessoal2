@@ -1,0 +1,489 @@
+/* ===== Paleta de cores e variáveis ===== */
+:root {
+  --cor-fundo: #FBF6EE;
+  --cor-fundo-alt: #F1E4D0;
+  --cor-texto: #3A2A1E;
+  --cor-texto-claro: #6B5847;
+  --cor-destaque: #8B5E2A;
+  --cor-dourado: #B8860B;
+  --cor-botao: #6E3B1E;
+  --cor-botao-hover: #58300F;
+  --cor-botao-texto: #FFFFFF;
+  --cor-borda: #D9C7A8;
+  --fonte-titulo: Georgia, 'Times New Roman', serif;
+  --fonte-texto: 'Segoe UI', Arial, sans-serif;
+  --largura-maxima: 1100px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fonte-texto);
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--cor-destaque);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--largura-maxima);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h1, h2, h3 {
+  font-family: var(--fonte-titulo);
+  color: var(--cor-texto);
+  line-height: 1.2;
+}
+
+section {
+  padding: 64px 0;
+}
+
+section.fundo-alt {
+  background-color: var(--cor-fundo-alt);
+}
+
+.titulo-secao {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.subtitulo-secao {
+  text-align: center;
+  color: var(--cor-texto-claro);
+  max-width: 640px;
+  margin: 0 auto 40px;
+}
+
+/* ===== Botões ===== */
+.botao {
+  display: inline-block;
+  padding: 14px 28px;
+  background-color: var(--cor-botao);
+  color: var(--cor-botao-texto);
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.botao:hover,
+.botao:focus-visible {
+  background-color: var(--cor-botao-hover);
+}
+
+.botao-secundario {
+  background-color: transparent;
+  color: var(--cor-botao);
+  border: 2px solid var(--cor-botao);
+}
+
+.botao-secundario:hover,
+.botao-secundario:focus-visible {
+  background-color: var(--cor-botao);
+  color: var(--cor-botao-texto);
+}
+
+:focus-visible {
+  outline: 3px solid var(--cor-dourado);
+  outline-offset: 2px;
+}
+
+/* ===== Cabeçalho ===== */
+.cabecalho {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--cor-fundo);
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.cabecalho .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.cabecalho .logo img {
+  height: 48px;
+  width: auto;
+}
+
+.menu-principal {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-principal a {
+  text-decoration: none;
+  color: var(--cor-texto);
+  font-weight: 600;
+}
+
+.menu-principal a:hover {
+  color: var(--cor-destaque);
+}
+
+.botao-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.botao-menu span {
+  display: block;
+  height: 3px;
+  background-color: var(--cor-texto);
+  border-radius: 2px;
+}
+
+/* ===== Início (hero) ===== */
+.hero {
+  position: relative;
+  padding: 80px 0;
+  background:
+    linear-gradient(180deg, rgba(241, 228, 208, 0.94), rgba(251, 246, 238, 0.94)),
+    url("../img/santo-3.webp") center 18% / 260px auto no-repeat,
+    linear-gradient(180deg, var(--cor-fundo-alt), var(--cor-fundo));
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+}
+
+.hero .slogan {
+  font-size: 1.2rem;
+  color: var(--cor-destaque);
+  font-style: italic;
+  margin-bottom: 16px;
+}
+
+.hero p.descricao {
+  max-width: 620px;
+  margin: 0 auto 32px;
+  color: var(--cor-texto-claro);
+}
+
+.hero-acoes {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ===== Sobre ===== */
+.sobre-grade {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+.sobre-valores {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.cartao-valor {
+  background-color: var(--cor-fundo);
+  border: 1px solid var(--cor-borda);
+  border-radius: 10px;
+  padding: 24px;
+}
+
+.cartao-valor h3 {
+  margin-top: 0;
+  color: var(--cor-destaque);
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.galeria img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--cor-borda);
+}
+
+/* ===== Serviços ===== */
+.grade-servicos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.cartao-servico {
+  background-color: var(--cor-fundo);
+  border: 1px solid var(--cor-borda);
+  border-radius: 10px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.icone-servico {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 16px;
+  color: var(--cor-dourado);
+}
+
+.imagem-servico {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  background-color: #FFFFFF;
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.cartao-servico h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 1.15rem;
+}
+
+.cartao-servico p.descricao-servico {
+  color: var(--cor-texto-claro);
+  flex-grow: 1;
+}
+
+.cartao-servico .preco {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--cor-destaque);
+  margin: 12px 0 4px;
+}
+
+.cartao-servico .prazo {
+  font-size: 0.9rem;
+  color: var(--cor-texto-claro);
+  margin-bottom: 16px;
+}
+
+.aviso-precos {
+  text-align: center;
+  margin-top: 24px;
+  color: var(--cor-texto-claro);
+  font-size: 0.9rem;
+}
+
+/* ===== Como funciona ===== */
+.grade-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.cartao-info h3 {
+  color: var(--cor-destaque);
+  margin-bottom: 8px;
+}
+
+/* ===== Depoimentos ===== */
+.grade-depoimentos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.cartao-depoimento {
+  background-color: var(--cor-fundo);
+  border: 1px solid var(--cor-borda);
+  border-radius: 10px;
+  padding: 24px;
+  font-style: italic;
+  color: var(--cor-texto-claro);
+}
+
+.cartao-depoimento footer {
+  margin-top: 12px;
+  font-style: normal;
+  font-weight: 600;
+  color: var(--cor-texto);
+}
+
+/* ===== Perguntas frequentes ===== */
+.lista-faq {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.item-faq {
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.pergunta-faq {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 18px 8px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--cor-texto);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  font-family: var(--fonte-texto);
+}
+
+.pergunta-faq .sinal {
+  color: var(--cor-dourado);
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.resposta-faq {
+  padding: 0 8px 18px;
+  color: var(--cor-texto-claro);
+  display: none;
+}
+
+.item-faq.aberto .resposta-faq {
+  display: block;
+}
+
+.item-faq.aberto .sinal {
+  transform: rotate(45deg);
+}
+
+/* ===== Contato ===== */
+.grade-contato {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  text-align: center;
+}
+
+.cartao-contato h3 {
+  color: var(--cor-destaque);
+  margin-bottom: 8px;
+}
+
+.cartao-contato a {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.cartao-contato a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Rodapé ===== */
+.rodape {
+  background-color: var(--cor-texto);
+  color: var(--cor-fundo);
+  text-align: center;
+  padding: 32px 0;
+  font-size: 0.9rem;
+}
+
+.rodape a {
+  color: var(--cor-fundo-alt);
+}
+
+/* ===== Botão flutuante do WhatsApp ===== */
+.whatsapp-flutuante {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  color: #FFFFFF;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  z-index: 200;
+}
+
+.whatsapp-flutuante svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 720px) {
+  .botao-menu {
+    display: flex;
+  }
+
+  .menu-principal {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--cor-fundo);
+    border-bottom: 1px solid var(--cor-borda);
+    flex-direction: column;
+    padding: 16px 20px;
+    gap: 16px;
+  }
+
+  .menu-principal.aberto {
+    display: flex;
+  }
+
+  .sobre-valores {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 1.9rem;
+  }
+}
